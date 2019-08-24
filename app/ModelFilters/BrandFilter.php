@@ -3,7 +3,7 @@ namespace App\ModelFilters;
 
 use EloquentFilter\ModelFilter;
 
-class ClientFilter extends ModelFilter
+class BrandFilter extends ModelFilter
 {
   /**
    * Related Models that have ModelFilters as well as the method on the ModelFilter
@@ -12,15 +12,6 @@ class ClientFilter extends ModelFilter
    * @var array
    */
   public $relations = [];
-
-  public function term($str)
-  {
-    return $this->where(function ($q) use ($str) {
-      return $q->where('name', 'LIKE', "%$str%")
-        ->orWhere('phone', 'LIKE', '%$str%')
-        ->orWhere('address', 'LIKE', '%$str%');
-    });
-  }
 
   public function setup()
   {

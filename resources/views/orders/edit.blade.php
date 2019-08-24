@@ -5,7 +5,7 @@
 @section('content')
   <div class="container">
     <h1>{{ __('order.update', ['order' => $order->id]) }}</h1>
-    <a href="{{route('order.index')}}">{{__('orders.all')}}</a>
+    <a href="{{route('order.index')}}">{{__('order.all')}}</a>
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -55,7 +55,7 @@
                         {{-- brand_id --}}
                         <div class="form-group {{ $errors->has('brand_id') ? 'has-danger' : ''}}">
                             <label class="control-label requiredField" for="brand_id">
-                                {{__('nomenclature.brand_id')}}
+                                {{__('nomenclature.brand')}}
                                 <span class="asteriskField">
                                     *
                                 </span>
@@ -75,7 +75,7 @@
                         {{-- workshop_id --}}
                         <div class="form-group {{ $errors->has('workshop_id') ? 'has-danger' : ''}}">
                             <label class="control-label requiredField" for="workshop_id">
-                                {{__('nomenclature.workshop_id')}}
+                                {{__('nomenclature.workshop')}}
                                 <span class="asteriskField">
                                     *
                                 </span>
@@ -144,7 +144,7 @@
 
                         {{-- client pay --}}
                         <div class="form-group row">
-                            <label for="client_pay" class="col-md-4 col-form-label text-md-right">{{ __('nomenclature.client.client_pay') }}</label>
+                            <label for="client_pay" class="col-md-4 col-form-label text-md-right">{{ __('nomenclature.client_pay') }}</label>
 
                             <div class="col-md-6">
                                 <input id="client_pay" type="number" class="form-control @error('client_pay') is-invalid @enderror" name="client_pay" value="{{ old('client_pay') ? old('client_pay') : $order->client_pay }}" required autocomplete="client_pay">
@@ -156,7 +156,7 @@
                                 @enderror
                             </div>
                         </div>
-                        {{-- end client_py --}}
+                        {{-- end client_pay --}}
 
                         {{-- notices_id --}}
                         <div class="form-group {{ $errors->has('notices') ? 'has-danger' : ''}}">

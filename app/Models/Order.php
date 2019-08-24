@@ -24,21 +24,21 @@ class Order extends Model
 
   public function brand()
   {
-    return $this->belongsTo('App\Models\Brand');
+    return $this->belongsTo('App\Models\Brand')->withTrashed();
   }
 
   public function type()
   {
-    return $this->belongsTo('App\Models\Type');
+    return $this->belongsTo('App\Models\Type')->withTrashed();
   }
 
   public function client()
   {
-    return $this->belongsTo('App\Models\Client');
+    return $this->belongsTo('App\Models\Client')->withTrashed();
   }
 
   public function workshop()
   {
-    return $this->belongsTo('App\Models\Workshop');
+    return $this->belongsTo('App\Models\Workshop')->withTrashed();
   }
 }

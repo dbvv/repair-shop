@@ -18,7 +18,7 @@
       [X] create api endpoints ordering
     [X] list of orders
     [X] translate to russian
-    [ ] disable hard deletes for nomenclature
+    [X] disable hard deletes for nomenclature
     [ ] user list of admin
     [ ] add installer
     [ ] move to public html

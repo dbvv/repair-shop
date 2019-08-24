@@ -32,4 +32,8 @@ return [
   // table info
   'created_at'      => 'Создано',
   'name'            => 'Название',
+  'model_data'      => 'Данные модели',
+  'problem'         => 'Описание проблемы',
+  'client_pay'      => 'Оплачено клиентом',
+  'notices'         => 'Заметки',
 ];
