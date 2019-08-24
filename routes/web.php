@@ -36,4 +36,10 @@ Route::group(['middleware' => 'auth'], function () {
   });
 
   Route::resource('order', 'OrdersController');
+
+  Route::get('users', 'UsersController@index')->name('users.index');
+  Route::delete('users/{id}', 'UsersController@delete')->name('users.destroy');
+
+  Route::post('user/assign-admin', 'UsersController@setAdmin')->name('users.assign-admin');
+  Route::post('user/revoke-admin', 'UsersController@revokeAdmin')->name('users.revoke-admin');
 });

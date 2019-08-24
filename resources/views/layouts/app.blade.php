@@ -56,7 +56,7 @@
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a href="{{ route('profile') }}" class="dropdown-item">
-                                        {{__('Profile')}}
+                                        {{__('users.profile')}}
                                     </a>
                                     <a href="{{ route('nomenclature.brand.index') }}" class="dropdown-item">
                                         {{__('nomenclature.brand')}}
@@ -72,13 +72,16 @@
                                     </a>
                                     @role('admin')
                                     <a href="{{ route('invite') }}" class="dropdown-item">
-                                        {{__('Invite')}}
+                                        {{__('users.invite')}}
+                                    </a>
+                                    <a href="{{ route('users.index') }}" class="dropdown-item">
+                                        {{__('users.all')}}
                                     </a>
                                     @endrole
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                        {{ __('profile.logout') }}
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
