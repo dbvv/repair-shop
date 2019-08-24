@@ -1,4 +1,4 @@
-[-] Initial release
+[X] Initial release
   [X] auth
   [X] user roles
   [X] change profile
@@ -7,7 +7,7 @@
     [X] change profile data
   [X] update password
   [X] mock database
-  [-] create forms
+  [X] create forms
     [X] crud for nomenclatures
       [X] brands
       [X] types
@@ -21,4 +21,4 @@
     [X] disable hard deletes for nomenclature
     [X] user list of admin
     [X] add installer
-    [ ] move to public html
+    [X] move to public html
