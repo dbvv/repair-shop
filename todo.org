@@ -1,0 +1,24 @@
+[-] Initial release
+  [X] auth
+  [X] user roles
+  [X] change profile
+    [X] disable register
+    [X] add invite system
+    [X] change profile data
+  [X] update password
+  [X] mock database
+  [-] create forms
+    [X] crud for nomenclatures
+      [X] brands
+      [X] types
+      [X] clients
+      [X] workshops
+    [X] form for order
+      [X] integrate js scripts
+      [X] create api endpoints ordering
+    [X] list of orders
+    [X] translate to russian
+    [ ] disable hard deletes for nomenclature
+    [ ] user list of admin
+    [ ] add installer
+    [ ] move to public html
