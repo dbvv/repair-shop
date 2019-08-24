@@ -2,6 +2,7 @@
 
 namespace App\ModelFilters;
 
+use Auth;
 use EloquentFilter\ModelFilter;
 
 class TypeFilter extends ModelFilter

@@ -1,6 +1,7 @@
 <?php
 namespace App\ModelFilters;
 
+use Auth;
 use EloquentFilter\ModelFilter;
 
 class BrandFilter extends ModelFilter

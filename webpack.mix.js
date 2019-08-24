@@ -10,6 +10,7 @@ const mix = require('laravel-mix');
  | file for the application as well as bundling up all the JS files.
  |
  */
+mix.setPublicPath('public_html/');
 
 mix
   .copy('node_modules/tinymce/skins/', 'public/js/skins')
