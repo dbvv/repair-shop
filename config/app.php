@@ -167,6 +167,7 @@ return [
      */
     Spatie\Permission\PermissionServiceProvider::class,
     EloquentFilter\ServiceProvider::class,
+     RachidLaasri\LaravelInstaller\Providers\LaravelInstallerServiceProvider::class,
 
     /*
      * Application Service Providers...

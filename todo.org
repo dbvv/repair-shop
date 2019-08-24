@@ -19,6 +19,6 @@
     [X] list of orders
     [X] translate to russian
     [X] disable hard deletes for nomenclature
-    [ ] user list of admin
-    [ ] add installer
+    [X] user list of admin
+    [X] add installer
     [ ] move to public html
