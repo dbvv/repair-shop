@@ -23,7 +23,7 @@
     [X] add installer
     [X] move to public html
 
-[-] Editions [9/13]
+[-] Editions [10/14]
   [X] add print button
   [X] remove buttons file on tinymce
   [X] add newclient from order
@@ -33,7 +33,7 @@
   [X] add modal to show forms
   [X] after creation redirect to index with modal
   [X] if authorized redirect always to home with orders
-  [ ] search form for global project
+  [X] search form for global project
   [ ] search form and output
   [ ] filter for tables
   [ ] apparat table add apparat data

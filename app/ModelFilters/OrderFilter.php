@@ -13,7 +13,12 @@ class OrderFilter extends ModelFilter
    *
    * @var array
    */
-  public $relations = [];
+  public $relations = [
+    'client'   => ['name', 'phone', 'address'],
+    'brand'    => ['name'],
+    'type'     => ['name'],
+    'workshop' => ['name'],
+  ];
 
   public function setup()
   {
@@ -33,6 +38,21 @@ class OrderFilter extends ModelFilter
       return $q->where('model_data', 'LIKE', "%$str%")
         ->orWhere('notices', 'LIKE', "%$str%")
         ->orWhere('problem', 'LIKE', "%$str%");
-    });
+    })
+      ->orWhereHas('client', function ($query) use ($str) {
+        return $query->where('name', 'LIKE', "%$str%")
+          ->orWhere('phone', 'LIKE', "%$str%")
+          ->orWhere('address', 'LIKE', "%$str%");
+      })
+      ->orWhereHas('brand', function ($query) use ($str) {
+        return $query->where('name', 'LIKE', "%$str%");
+      })
+      ->orWhereHas('type', function ($query) use ($str) {
+        return $query->where('name', 'LIKE', "%$str%");
+      })
+      ->orWhereHas('workshop', function ($query) use ($str) {
+        return $query->where('name', 'LIKE', "%$str%");
+      })
+    ;
   }
 }

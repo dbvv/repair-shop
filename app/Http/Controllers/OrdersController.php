@@ -18,7 +18,10 @@ class OrdersController extends Controller
    */
   public function index(Request $request)
   {
-    $orders = Order::with('client', 'brand', 'type', 'workshop')->filter($request->all())->orderBy('id', 'desc')->paginate(40);
+    $orders = Order::with('client', 'brand', 'type', 'workshop')
+      ->filter($request->all())
+      ->orderBy('id', 'desc')
+      ->paginateFilter(40);
 
     return view('orders.index', compact('orders'));
   }
