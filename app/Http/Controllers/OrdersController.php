@@ -91,9 +91,13 @@ class OrdersController extends Controller
    * @param  int  $id
    * @return \Illuminate\Http\Response
    */
-  public function show($id)
+  public function show(Request $request, $id)
   {
     $order = Order::where('id', $id)->with('client', 'workshop', 'brand', 'type')->firstOrFail();
+
+    if ($request->ajax()) {
+      return view('orders.preview', compact('order'));
+    }
 
     $types     = Type::all();
     $brands    = Brand::all();
