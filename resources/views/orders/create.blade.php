@@ -78,6 +78,23 @@
                         </div>
                         {{-- end brand_id --}}
 
+                        {{-- model_data --}}
+                        <div class="form-group {{ $errors->has('model_data') ? 'has-danger' : ''}}">
+                            <label class="control-label requiredField" for="model_data">
+                                {{__('nomenclature.model_data')}}
+                                <span class="asteriskField">
+                                    *
+                                </span>
+                            </label>
+                            <textarea name="model_data" id="model_data" cols="30" rows="10" class="tinymce form-control">
+                              {{old('model_data')}}
+                            </textarea>
+                            @if($errors->has('model_data'))
+                              <div class="form-control-feedback">{{ $errors->first('model_data')}}</div>
+                            @endif
+                        </div>
+                        {{-- end model_data_id --}}
+
                         {{-- workshop_id --}}
                         <div class="form-group {{ $errors->has('workshop_id') ? 'has-danger' : ''}}">
                             <label class="control-label requiredField" for="workshop_id">
@@ -98,22 +115,7 @@
                         </div>
                         {{-- end workshop_id --}}
 
-                        {{-- model_data --}}
-                        <div class="form-group {{ $errors->has('model_data') ? 'has-danger' : ''}}">
-                            <label class="control-label requiredField" for="model_data">
-                                {{__('nomenclature.model_data')}}
-                                <span class="asteriskField">
-                                    *
-                                </span>
-                            </label>
-                            <textarea name="model_data" id="model_data" cols="30" rows="10" class="tinymce form-control">
-                              {{old('model_data')}}
-                            </textarea>
-                            @if($errors->has('model_data'))
-                              <div class="form-control-feedback">{{ $errors->first('model_data')}}</div>
-                            @endif
-                        </div>
-                        {{-- end model_data_id --}}
+                        
 
                         {{-- problem_id --}}
                         <div class="form-group {{ $errors->has('problem') ? 'has-danger' : ''}}">
