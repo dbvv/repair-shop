@@ -46,6 +46,7 @@ try {
   require('tinymce/plugins/visualblocks/plugin');
   require('tinymce/plugins/wordcount/plugin');
   require('tinymce-i18n/langs/ru');
+  require('bootstrap-notify/bootstrap-notify');
 } catch (e) {}
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests

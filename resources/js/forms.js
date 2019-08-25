@@ -36,4 +36,17 @@ $(document).ready(() => {
     menubar: false,
   };
   tinymce.init(editor_config);
+  $('#clientCreateModalForm').on('submit', function(e) {
+    e.preventDefault();
+  });
+  $('#saveClientModal').on('click', function() {
+    let $form = $('#clientCreateModalForm');
+    axios.post($form.attr('action'), $form.serialize()).then(data => {
+      const client = data.data.client;
+      $('#exampleModal').modal('hide');
+      $('input[name="client_id"]').val(client.id);
+      $('input[name="client"]').val(client.name + ' ' + client.phone);
+      $.notify('Клиент создан!');
+    })
+  });
 });

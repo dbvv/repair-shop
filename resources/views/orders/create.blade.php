@@ -28,6 +28,13 @@
                             @if($errors->has('client_id'))
                               <div class="form-control-feedback">{{ $errors->first('client_id')}}</div>
                             @endif
+
+                            <br>
+
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                              {{__('nomenclature.client_create')}}
+                            </button>
                         </div>
                         {{-- end client_id --}}
 
@@ -189,4 +196,72 @@
         </div>
     </div>
 </div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">
+            {{__('nomenclature.client_create')}}
+        </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="clientCreateModalForm" method="POST" action="{{ route('nomenclature.client.store') }}">
+            @csrf
+
+            <div class="form-group row">
+                <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('nomenclature.client_name') }}</label>
+
+                <div class="col-md-6">
+                    <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+
+                    @error('name')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="phone" class="col-md-4 col-form-label text-md-right">{{ __('nomenclature.client_phone') }}</label>
+
+                <div class="col-md-6">
+                    <input id="phone" type="text" class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ old('phone') }}" required autocomplete="phone" autofocus>
+
+                    @error('phone')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="address" class="col-md-4 col-form-label text-md-right">{{ __('nomenclature.client_address') }}</label>
+
+                <div class="col-md-6">
+                    <input id="address" type="text" class="form-control @error('address') is-invalid @enderror" name="address" value="{{ old('address') }}" required autocomplete="address" autofocus>
+
+                    @error('address')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
+            </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">{{ __('nomenclature.close') }}</button>
+        <button type="button" class="btn btn-primary" id="saveClientModal">{{ __('nomenclature.save') }}</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 @endsection

@@ -50,12 +50,23 @@ class ClientsController extends Controller
     $validator = Validator::make($request->all(), $rules);
 
     if ($validator->fails()) {
+      if ($request->ajax()) {
+        return response()->json($validator, 400);
+      }
       return redirect()->back()
         ->withInput()
         ->withErrors($validator);
     }
 
-    $client = Client::create($request->all());
+    $client = Client::create([
+      'name'    => $request->get('name'),
+      'phone'   => $request->get('phone'),
+      'address' => $request->get('address'),
+    ]);
+
+    if ($request->ajax()) {
+      return response()->json(compact('client'));
+    }
 
     flash(__('nomenclature.client.created'));
 

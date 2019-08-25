@@ -28,6 +28,8 @@ return [
   'create'          => 'Создать',
   'update'          => 'Обновить',
   'save'            => 'Сохранить',
+  'cancel'          => 'Отмена',
+  'close'           => 'Закрыть',
 
   // table info
   'created_at'      => 'Создано',
