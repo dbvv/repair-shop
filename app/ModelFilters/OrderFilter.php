@@ -30,7 +30,9 @@ class OrderFilter extends ModelFilter
   public function search($str)
   {
     return $this->where(function ($q) use ($str) {
-      return $q->where('model_data', 'LIKE', "%$str%");
+      return $q->where('model_data', 'LIKE', "%$str%")
+        ->orWhere('notices', 'LIKE', "%$str%")
+        ->orWhere('problem', 'LIKE', "%$str%");
     });
   }
 }
