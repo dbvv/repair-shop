@@ -82,7 +82,7 @@ class OrdersController extends Controller
 
     flash(__('order.created'));
 
-    return redirect()->route('order.edit', ['id' => $order->id]);
+    return redirect()->route('order.index')->with('order_id', $order->id);
   }
 
   /**

@@ -101,7 +101,7 @@
                                 </span>
                             </label>
                             <textarea name="model_data" id="model_data" cols="30" rows="10" class="tinymce form-control">
-                              {{old('model_data') ? old('model_data') : $order->model_data }}
+                              {!! old('model_data') ? old('model_data') : $order->model_data !!}
                             </textarea>
                             @if($errors->has('model_data'))
                               <div class="form-control-feedback">{{ $errors->first('model_data')}}</div>
@@ -118,7 +118,7 @@
                                 </span>
                             </label>
                             <textarea name="problem" id="problem" cols="30" rows="10" class="tinymce form-control">
-                              {{old('problem') ? old('problem') : $order->problem}}
+                              {!! old('problem') ? old('problem') : $order->problem !!}
                             </textarea>
                             @if($errors->has('problem'))
                               <div class="form-control-feedback">{{ $errors->first('problem')}}</div>
@@ -167,7 +167,7 @@
                                 </span>
                             </label>
                             <textarea name="notices" id="notices" cols="30" rows="10" class="tinymce form-control">
-                              {{old('notices') ? old('notices') : $order->notices }}
+                              {!! old('notices') ? old('notices') : $order->notices !!}
                             </textarea>
                             @if($errors->has('notices'))
                               <div class="form-control-feedback">{{ $errors->first('notices')}}</div>

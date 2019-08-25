@@ -23,9 +23,13 @@
     [X] add installer
     [X] move to public html
 
-[X] Editions [5/5]
+[-] Editions [7/9]
   [X] add print button
   [X] remove buttons file on tinymce
   [X] add newclient from order
   [X] move home to orders(alias)
   [X] move creation button to right
+  [X] remove tinymce
+  [ ] add modal to show forms
+  [ ] after creation redirect to index with modal
+  [X] if authorized redirect always to home with orders

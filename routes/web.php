@@ -12,6 +12,9 @@
  */
 
 Route::get('/', function () {
+  if (Auth::user() != null) {
+    return redirect()->route('order.index');
+  }
   return view('welcome');
 });
 
