@@ -14,9 +14,11 @@ class TypesController extends Controller
    *
    * @return \Illuminate\Http\Response
    */
-  public function index()
+  public function index(Request $request)
   {
-    $types = Type::paginate(40);
+    $types = Type::filter($request->all())
+      ->orderBy('id', 'desc')
+      ->paginate(40);
     return view('nomenclature.types.index', compact('types'));
   }
 

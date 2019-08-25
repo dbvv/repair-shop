@@ -20,7 +20,9 @@ class ClientsController extends Controller
       $clients = Client::filter($request->all())->get();
       return response()->json(compact('clients'));
     }
-    $clients = Client::paginate(40);
+    $clients = Client::filter($request->all())
+      ->orderBy('id', 'desc')
+      ->paginate(40);
 
     return view('nomenclature.clients.index', compact('clients'));
   }

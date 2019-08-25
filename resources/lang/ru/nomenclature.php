@@ -30,6 +30,7 @@ return [
   'save'            => 'Сохранить',
   'cancel'          => 'Отмена',
   'close'           => 'Закрыть',
+  'search'          => 'Поиск',
 
   // table info
   'created_at'      => 'Создано',

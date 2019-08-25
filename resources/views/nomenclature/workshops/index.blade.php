@@ -5,6 +5,7 @@
 @section('content')
   <div class="container">
     <h1>{{ __('nomenclature.workshops') }}</h1>
+    @include('layouts.search')
     <a href="{{ route('nomenclature.workshop.create') }}" class="btn btn-info float-right">{{ __('nomenclature.create') }}</a>
     <table class="table table-striped table-hover">
       <thead>

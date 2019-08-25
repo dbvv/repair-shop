@@ -26,4 +26,10 @@ class TypeFilter extends ModelFilter
       $this->withTrashed();
     }
   }
+
+  public function search($str) {
+    return $this->where(function ($q) use ($str) {
+      return $q->where('name', 'LIKE', "%$str%");
+    });
+  }
 }
