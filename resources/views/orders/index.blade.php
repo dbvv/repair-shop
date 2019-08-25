@@ -5,7 +5,7 @@
 @section('content')
 <div class="container">
     <h1>{{ __('order.all') }}</h1>
-    <a href="{{ route('order.create') }}" class="btn btn-info">{{ __('nomenclature.create') }}</a>
+    <a href="{{ route('order.create') }}" class="btn btn-info float-right">{{ __('nomenclature.create') }}</a>
     <table class="table table-striped table-hover">
       <thead>
         <tr>
@@ -29,6 +29,7 @@
             <form action="{{ route('order.destroy', ['id' => $order->id]) }}" method="POST">
               @csrf
               @method('DELETE')
+              <a href="#" class="btn btn-default btn-sm"><i class="fa fa-print"></i></a>
               <a class="btn btn-default btn-sm" href="{{route('order.edit', ['id' => $order->id])}}"><i class="fa fa-edit"></i></a>
               <button class="btn btn-sm"><i class="fa fa-trash"></i></button>
             </form>

@@ -23,9 +23,9 @@
     [X] add installer
     [X] move to public html
 
-[ ] Editions
-  [ ] add print button
-  [ ] remove buttons file on tinymce
+[-] Editions [4/5]
+  [X] add print button
+  [X] remove buttons file on tinymce
   [ ] add newclient from order
-  [ ] move home to orders(alias)
-  [ ] move creation button to right
+  [X] move home to orders(alias)
+  [X] move creation button to right

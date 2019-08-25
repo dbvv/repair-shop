@@ -33,7 +33,7 @@ $(document).ready(() => {
     relative_urls: false,
     language: 'ru',
     branding: false,
-    menu: false,
+    menubar: false,
   };
   tinymce.init(editor_config);
 });

@@ -5,7 +5,7 @@
 @section('content')
   <div class="container">
     <h1>{{ __('nomenclature.types') }}</h1>
-    <a href="{{ route('nomenclature.type.create') }}" class="btn btn-info">{{ __('nomenclature.create') }}</a>
+    <a href="{{ route('nomenclature.type.create') }}" class="btn btn-info float-right">{{ __('nomenclature.create') }}</a>
     <table class="table table-striped table-hover">
       <thead>
         <tr>
