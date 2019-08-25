@@ -71,10 +71,6 @@
                         <a href="{{ url('/home') }}">{{__('profile.home')}}</a>
                     @else
                         <a href="{{ route('login') }}">{{__('profile.login')}}</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">{{ __('profile.register')  }}</a>
-                        @endif
                     @endauth
                 </div>
             @endif
