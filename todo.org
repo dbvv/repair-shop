@@ -23,7 +23,7 @@
     [X] add installer
     [X] move to public html
 
-[-] Editions [11/14]
+[-] Editions [12/14]
   [X] add print button
   [X] remove buttons file on tinymce
   [X] add newclient from order
@@ -36,5 +36,5 @@
   [X] search form for global project
   [X] search form and output
   [ ] filter for tables
-  [ ] apparat table add apparat data
+  [X] apparat table add apparat data
   [ ] printable form for order

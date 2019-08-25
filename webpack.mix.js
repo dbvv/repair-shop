@@ -12,9 +12,6 @@ const mix = require('laravel-mix');
  */
 mix.setPublicPath('public_html/');
 
-mix
-  .copy('node_modules/tinymce/skins/', 'public_html/js/skins')
-  .copy('node_modules/tinymce/themes/', 'public_html/js/themes');
 
 mix.js('resources/js/app.js', 'js')
     .sass('resources/sass/app.scss', 'css');

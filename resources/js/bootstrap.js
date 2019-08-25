@@ -9,6 +9,7 @@ try {
   window.$ = window.jQuery = require('jquery');
   require('jquery-ui/ui/widgets/autocomplete.js');
   require('bootstrap');
+  require('bootstrap-table/src/bootstrap-table');
   require('bootstrap-notify/bootstrap-notify');
 } catch (e) {}
 /**
