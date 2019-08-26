@@ -117,13 +117,10 @@
 
                         
 
-                        {{-- problem_id --}}
+                        {{-- problem --}}
                         <div class="form-group {{ $errors->has('problem') ? 'has-danger' : ''}}">
                             <label class="control-label requiredField" for="problem">
                                 {{__('nomenclature.problem')}}
-                                <span class="asteriskField">
-                                    *
-                                </span>
                             </label>
                             <textarea name="problem" id="problem" cols="30" rows="10" class="tinymce form-control">
                               {{old('problem')}}
@@ -132,7 +129,7 @@
                               <div class="form-control-feedback">{{ $errors->first('problem')}}</div>
                             @endif
                         </div>
-                        {{-- end problem_id --}}
+                        {{-- end problem --}}
 
                         {{-- price --}}
                         <div class="form-group row">
@@ -166,13 +163,10 @@
                         </div>
                         {{-- end client_py --}}
 
-                        {{-- notices_id --}}
+                        {{-- notices --}}
                         <div class="form-group {{ $errors->has('notices') ? 'has-danger' : ''}}">
                             <label class="control-label requiredField" for="notices">
                                 {{__('nomenclature.notices')}}
-                                <span class="asteriskField">
-                                    *
-                                </span>
                             </label>
                             <textarea name="notices" id="notices" cols="30" rows="10" class="tinymce form-control">
                               {{old('notices')}}
@@ -181,7 +175,7 @@
                               <div class="form-control-feedback">{{ $errors->first('notices')}}</div>
                             @endif
                         </div>
-                        {{-- end notices_id --}}
+                        {{-- end notices --}}
 
 
 
