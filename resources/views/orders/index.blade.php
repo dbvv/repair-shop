@@ -31,7 +31,7 @@
               @csrf
               @method('DELETE')
               <a href="#" onclick="return showOrderModal({{$order->id}})" class="btn btn-default"><i class="fa fa-eye"></i></a>
-              <a href="#" class="btn btn-default btn-sm"><i class="fa fa-print"></i></a>
+              <a href="{{route('print', ['orderID' => $order->id])}}" target="_blank" class="btn btn-default btn-sm"><i class="fa fa-print"></i></a>
               <a class="btn btn-default btn-sm" href="{{route('order.edit', ['id' => $order->id])}}"><i class="fa fa-edit"></i></a>
               <button class="btn btn-sm"><i class="fa fa-trash"></i></button>
             </form>

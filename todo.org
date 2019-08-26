@@ -39,6 +39,6 @@
   [X] apparat table add apparat data
   [-] printable form for order
     [X] html with data
-    [ ] controller with new page
+    [X] controller with new page
     [ ] check printable data
   [ ] remove required in order form

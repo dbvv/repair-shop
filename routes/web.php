@@ -45,4 +45,6 @@ Route::group(['middleware' => 'auth'], function () {
 
   Route::post('user/assign-admin', 'UsersController@setAdmin')->name('users.assign-admin');
   Route::post('user/revoke-admin', 'UsersController@revokeAdmin')->name('users.revoke-admin');
+
+  Route::get('print/{orderID}', 'PrintController@print')->name('print');
 });
