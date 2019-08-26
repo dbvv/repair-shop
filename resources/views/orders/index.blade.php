@@ -7,15 +7,15 @@
     <h1>{{ __('order.all') }}</h1>
     @include('layouts.search')
     <a href="{{ route('order.create') }}" class="btn btn-info float-right">{{ __('nomenclature.create') }}</a>
-    <table class="table table-striped table-hover">
+    <table class="table table-striped table-hover" data-toggle="table">
       <thead>
         <tr>
-          <th scope="col">#</th>
-          <th scope="col">{{ __('nomenclature.created_at') }}</th>
-          <th scope="col" style="width: 25%">{{ __('order.apparat') }}</th>
-          <th scope="col">{{ __('nomenclature.client') }}</th>
-          <th scope="col">{{ __('nomenclature.workshop') }}</th>
-          <th scope="col"></th>
+          <th scope="col" data-field="id" data-sortable="true">#</th>
+          <th scope="col" data-field="created_at" data-sortable="true">{{ __('nomenclature.created_at') }}</th>
+          <th scope="col" data-field="apparat" data-sortable="true" style="width: 20%">{{ __('order.apparat') }}</th>
+          <th scope="col" data-field="client" data-sortable="true">{{ __('nomenclature.client') }}</th>
+          <th scope="col" data-field="workshop" data-sortable="true">{{ __('nomenclature.workshop') }}</th>
+          <th scope="col" data-field="edit" data-width="15" data-width-unit="%"></th>
         </tr>
       </thead>
       <tbody>
