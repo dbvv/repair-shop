@@ -91,26 +91,38 @@
         </div>
         <div class="modal-body">
           <div id="modalPreviewForm" class="modal-order-form">
-            
+            <iframe frameborder="0" id="model-data-iframe" style="width: 100%; height: 100%; min-height: 290mm"></iframe>
           </div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">{{__('nomenclature.close')}}</button>
-          <button type="button" class="btn btn-primary">{{__('nomenclature.save')}}</button>
+          <button id="modalPrintButton" type="button" data-id="" onclick="goToPrint()" class="btn btn-primary">
+            <i class="fa fa-print"></i>
+          </button>
         </div>
       </div>
     </div>
   </div>
   <script>
     function showOrderModal(orderID) {
-      console.log('orderID', orderID);
       var $modalShowOrder = $('#modalShowOrder');
       $('#modalsShowOrderLongTitle').html('#' + orderID);
       axios.get('{{ route('order.index') }}/' + orderID)
         .then(data => {
-          $('#modalPreviewForm').html(data.data);
+          $('#modalPrintButton').attr('data-id', orderID);
+          var hideprintButton = "<style>#print-button{display:none !important}\<\/style>";
+          $('#model-data-iframe').contents().find('html').html(data.data + hideprintButton);
+
         })
       $modalShowOrder.modal('show');
+    }
+
+    function goToPrint() {
+      var orderID = $('#modalPrintButton').attr('data-id');
+      if (orderID) {
+        var redirectUrl = '{{url('/')}}/print/' + orderID;
+        window.open(redirectUrl, '_blank');
+      }
     }
   </script>
   {{-- script with modal --}}

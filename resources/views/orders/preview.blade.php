@@ -7,8 +7,8 @@
   <style>
   @media screen {
     html, body {
-        width: 210mm;
-        height: 297mm;
+        max-width: 210mm;
+        max-height: 297mm;
         margin: 1cm auto;
       }
   }
@@ -30,6 +30,7 @@
     }
     * {
       font-size: 18px;
+      line-height: 20px;
     }
     html, body {
       width: 210mm;
@@ -59,7 +60,7 @@
   </style>
 </head>
 <body>
-  <div class="print">
+  <div class="print" id="print-button">
     <a href="#" onclick="window.print(); return false;"><i class="fa fa-print"></i></a>
   </div>
   {{-- begin header --}}
@@ -84,7 +85,7 @@
         <p class="mb-0">{{ __('order.opening_hours') }}</p>
         <p>{{ __('order.opening_hours_weekend') }}</p>
       </div>
-      <div class="col-sm-2 text-right">
+      <div class="col-sm-3 text-right">
         <p class="mb-0"><b>{{ __('order.client') }}</b></p>
         <p class="mb-0">{{$order->client->name}}</p>
         <p class="mb-0">{{$order->client->address}}</p>
@@ -150,5 +151,23 @@
     </div>
   </footer>
   {{-- end footer --}}
+  <script>
+    window.onload = function () {
+      if (self != top) {
+        document.querySelector('#print-button').remove()
+        console.log('in iframe')
+      } else {
+        console.log('not in iframe')
+      }
+
+      if ( window.location !== window.parent.location ) {
+        // The page is in an iframe
+        document.querySelector('#print-button').remove()
+      } else {
+        // The page is not in an iframe
+      }
+    }
+    document.querySelector('#print-button').remove()
+  </script>
 </body>
 </html>
