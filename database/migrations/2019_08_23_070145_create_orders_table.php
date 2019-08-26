@@ -24,6 +24,7 @@ class CreateOrdersTable extends Migration
             $table->integer('client_pay')->nullable();
             $table->text('notices')->nullable();
             $table->text('problem');
+            $table->text('imei')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

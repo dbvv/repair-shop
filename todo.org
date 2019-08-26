@@ -42,3 +42,8 @@
     [X] controller with new page
     [X] check printable data
   [ ] remove required in order form
+  [ ] add imei field and make it searchable
+  [ ] form text area smaller
+  [ ] localize login and bootstrap-table
+  [ ] make date searchable
+  [ ] margins on printable
