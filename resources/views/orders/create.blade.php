@@ -12,6 +12,15 @@
                 <div class="card-header">{{ __('order.create') }}</div>
 
                 <div class="card-body">
+                  @if (count($errors) > 0)
+                    <div class="alert alert-danger">
+                      <ul>
+                        @foreach ($errors->all() as $error)
+                          <li>{{ $error }}</li>
+                        @endforeach
+                      </ul>
+                    </div>
+                  @endif
                     <form method="POST" action="{{ route('order.store') }}">
                         @csrf
 
@@ -23,7 +32,7 @@
                                     *
                                 </span>
                             </label>
-                            <input type="hidden" name="client_id" value="">
+                            <input type="hidden" name="client_id" value="{{old('client_id')}}">
                             <input required="true" class="form-control clientSelect {{ $errors->has('client_id') ? 'form-control-danger' : ''}}" id="client" name="client" type="text" value="{{isset($proposal) && $proposal->client != null ? $proposal->client->name . ' (' . $proposal->client->phone . ') ' : old('client')}}" autofocus />
                             @if($errors->has('client_id'))
                               <div class="form-control-feedback">{{ $errors->first('client_id')}}</div>

@@ -23,7 +23,7 @@
     [X] add installer
     [X] move to public html
 
-[-] Editions [19/20]
+[X] Editions [22/22]
   [X] add print button
   [X] remove buttons file on tinymce
   [X] add newclient from order
@@ -48,4 +48,6 @@
     [X] bootstrap table
     [X] login
   [X] make date searchable
-  [ ] margins on printable
+  [X] margins on printable
+  [X] search date valid
+  [X] make on order creation form working

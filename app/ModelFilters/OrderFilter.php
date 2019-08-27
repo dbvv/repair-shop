@@ -5,6 +5,7 @@ namespace App\ModelFilters;
 use Auth;
 use EloquentFilter\ModelFilter;
 use Date;
+use Validator;
 
 class OrderFilter extends ModelFilter
 {
@@ -36,11 +37,20 @@ class OrderFilter extends ModelFilter
   public function search($str)
   {
     return $this->where(function ($q) use ($str) {
-      return $q->where('model_data', 'LIKE', "%$str%")
+
+      $query = $q->where('model_data', 'LIKE', "%$str%")
         ->orWhere('notices', 'LIKE', "%$str%")
         ->orWhere('imei', 'LIKE', "%$str%")
-        ->orWhereDate('created_at', '=', Date::parse($str)->format('Y-m-d'))
         ->orWhere('problem', 'LIKE', "%$str%");
+        
+      // validate date
+      $validator = Validator::make(['search_date' => $str], ['search_date' => 'date']);
+
+      if (!$validator->fails()) {
+        $date = Date::parse($str)->format('Y-m-d');
+        $query->orWhereDate('created_at', '=', $date);
+      }
+      return $query;
     })
       ->orWhereHas('client', function ($query) use ($str) {
         return $query->where('name', 'LIKE', "%$str%")
@@ -55,7 +65,6 @@ class OrderFilter extends ModelFilter
       })
       ->orWhereHas('workshop', function ($query) use ($str) {
         return $query->where('name', 'LIKE', "%$str%");
-      })
-    ;
+      });
   }
 }

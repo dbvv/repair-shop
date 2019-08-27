@@ -59,19 +59,31 @@
           </button>
         </div>
         <div class="modal-body">
-          <div class="modal-order-form">
-            @include('orders.preview', ['order' => $orderR])
+          <div id="modal-order-form-after-creation" class="modal-order-form">
+            <iframe frameborder="0" id="model-data-order-iframe" style="width: 100%; height: 100%; min-height: 290mm"></iframe>
           </div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">{{__('nomenclature.close')}}</button>
-          <button type="button" class="btn btn-primary">{{__('nomenclature.save')}}</button>
+          <button id="modalPrintPreviewButton" type="button" data-id="" onclick="goToPrintPreview()" class="btn btn-primary">
+            <i class="fa fa-print"></i>
+          </button>
         </div>
       </div>
     </div>
   </div>
   <script>
     window.onload = function () {
+      var $modalShowOrder = $('#modalShowOrder');
+      var orderID = {{session('order_id')}};
+      $('#modalsShowOrderLongTitle').html('#' + orderID);
+      axios.get('{{ route('order.index') }}/' + orderID)
+        .then(data => {
+          $('#modalPrintPreviewButton').attr('data-id', orderID);
+          var hideprintButton = "<style>#print-button{display:none !important}\<\/style>";
+          $('#model-data-order-iframe').contents().find('html').html(data.data + hideprintButton);
+
+        })
       $('#recentlyCreatedOrder').modal('show');
     }
   </script>
