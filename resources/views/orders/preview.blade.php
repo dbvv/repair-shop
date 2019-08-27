@@ -64,7 +64,7 @@
     <a href="#" onclick="window.print(); return false;"><i class="fa fa-print"></i></a>
   </div>
   {{-- begin header --}}
-  <header class="text-center">
+  <header class="text-center mb-5">
     <h1>{{ __('order.workshop') }}</h1>
     <h5>{{__('order.subtitle')}}</h5>
     <p>{{ __('order.order_data', [
@@ -76,7 +76,8 @@
 
   {{-- beginn main --}}
   <main class="container-fluid">
-    <div class="row justify-content-between bordered-data">
+    {{-- credentials --}}
+    <div class="row mb-5 justify-content-between bordered-data">
       <div class="col-sm-5 bordered-data-right">
         <p class="mb-0"><b>{{__('order.workshop_owner')}}</b></p>
         <p class="mb-0">{{ __('order.workshop_owner_iin') }}</p>
@@ -95,8 +96,8 @@
     {{-- end credentials --}}
 
     {{-- data --}}
-    <div class="model-data mt-3">
-      <div>{{ __('order.apparat') }}: {{ $order->type->name }} {{ $order->brand->name }} {!! $order->model_data !!}</div>
+    <div class="model-data mt-3 mb-5">
+      <div>{{ __('order.apparat') }}: {{ $order->type->name }} {{ $order->brand->name }} {!! $order->model_data !!} {{ $order->imei ? ' IMEI: ' . $order->imei : '' }}</div>
       <div>
         {{__('nomenclature.problem')}}: {!! $order->problem !!}
       </div>

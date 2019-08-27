@@ -76,7 +76,7 @@
                             <label for="imei" class="col-md-4 col-form-label text-md-right">{{ __('IMEI') }}</label>
 
                             <div class="col-md-6">
-                                <input id="imei" type="text" class="form-control @error('imei') is-invalid @enderror" name="imei" value="{{ old('imei') }}" >
+                                <input id="imei" type="text" class="form-control @error('imei') is-invalid @enderror" name="imei" value="{{ old('imei') ? old('imei') : $order->imei }}" >
 
                                 @error('imei')
                                     <span class="invalid-feedback" role="alert">
