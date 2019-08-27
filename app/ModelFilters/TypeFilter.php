@@ -27,7 +27,8 @@ class TypeFilter extends ModelFilter
     }
   }
 
-  public function search($str) {
+  public function search($str)
+  {
     return $this->where(function ($q) use ($str) {
       return $q->where('name', 'LIKE', "%$str%");
     });

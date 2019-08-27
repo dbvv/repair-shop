@@ -7,7 +7,7 @@
     <h1>{{ __('order.all') }}</h1>
     @include('layouts.search')
     <a href="{{ route('order.create') }}" class="btn btn-info float-right">{{ __('nomenclature.create') }}</a>
-    <table class="table table-striped table-hover" data-toggle="table">
+    <table class="table table-striped table-hover" data-toggle="table" data-locale="ru-RU">
       <thead>
         <tr>
           <th scope="col" data-field="id" data-sortable="true">#</th>
@@ -23,7 +23,7 @@
         <tr>
           <th scope="row">{{$order->id}}</th>
           <td>{{ date('d.m.Y', strtotime($order->created_at)) }}</td>
-          <td>{{ $order->type->name . ' ' . $order->brand->name . ' ' . $order->model_data }}</td>
+          <td>{{ $order->type->name . ' ' . $order->brand->name . ' ' . $order->model_data . ($order->imei ? ' IMEI: ' . $order->imei : '') }}</td>
           <td>{{ $order->client->name . ' ' . $order->client->phone }}</td>
           <td>{{ $order->workshop->name }}</td>
           <td>

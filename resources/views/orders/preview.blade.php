@@ -151,23 +151,5 @@
     </div>
   </footer>
   {{-- end footer --}}
-  <script>
-    window.onload = function () {
-      if (self != top) {
-        document.querySelector('#print-button').remove()
-        console.log('in iframe')
-      } else {
-        console.log('not in iframe')
-      }
-
-      if ( window.location !== window.parent.location ) {
-        // The page is in an iframe
-        document.querySelector('#print-button').remove()
-      } else {
-        // The page is not in an iframe
-      }
-    }
-    document.querySelector('#print-button').remove()
-  </script>
 </body>
 </html>

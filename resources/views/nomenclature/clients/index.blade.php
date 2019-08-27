@@ -7,14 +7,14 @@
     <h1>{{ __('nomenclature.clients') }}</h1>
     @include('layouts.search')
     <a href="{{ route('nomenclature.client.create') }}" class="btn btn-info float-right">{{ __('nomenclature.create') }}</a>
-    <table class="table table-striped table-hover">
+    <table class="table table-striped table-hover" data-toggle="table" data-locale="ru-RU">
       <thead>
         <tr>
-          <th scope="col">#</th>
-          <th scope="col">{{ __('nomenclature.client_name') }}</th>
-          <th scope="col">{{ __('nomenclature.client_address') }}</th>
-          <th scope="col">{{ __('nomenclature.client_phone') }}</th>
-          <th scope="col">{{ __('nomenclature.created_at') }}</th>
+          <th scope="col" data-sortable="true">#</th>
+          <th scope="col" data-sortable="true">{{ __('nomenclature.client_name') }}</th>
+          <th scope="col" data-sortable="true">{{ __('nomenclature.client_address') }}</th>
+          <th scope="col" data-sortable="true">{{ __('nomenclature.client_phone') }}</th>
+          <th scope="col" data-sortable="true">{{ __('nomenclature.created_at') }}</th>
           <th scope="col"></th>
         </tr>
       </thead>

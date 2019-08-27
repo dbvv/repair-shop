@@ -4,6 +4,7 @@ namespace App\ModelFilters;
 
 use Auth;
 use EloquentFilter\ModelFilter;
+use Date;
 
 class OrderFilter extends ModelFilter
 {
@@ -37,6 +38,8 @@ class OrderFilter extends ModelFilter
     return $this->where(function ($q) use ($str) {
       return $q->where('model_data', 'LIKE', "%$str%")
         ->orWhere('notices', 'LIKE', "%$str%")
+        ->orWhere('imei', 'LIKE', "%$str%")
+        ->orWhereDate('created_at', '=', Date::parse($str)->format('Y-m-d'))
         ->orWhere('problem', 'LIKE', "%$str%");
     })
       ->orWhereHas('client', function ($query) use ($str) {

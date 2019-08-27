@@ -78,6 +78,20 @@
                         </div>
                         {{-- end brand_id --}}
 
+                        <div class="form-group row">
+                            <label for="imei" class="col-md-4 col-form-label text-md-right">{{ __('IMEI') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="imei" type="text" class="form-control @error('imei') is-invalid @enderror" name="imei" value="{{ old('imei') }}" >
+
+                                @error('imei')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
                         {{-- model_data --}}
                         <div class="form-group {{ $errors->has('model_data') ? 'has-danger' : ''}}">
                             <label class="control-label requiredField" for="model_data">
@@ -86,9 +100,7 @@
                                     *
                                 </span>
                             </label>
-                            <textarea name="model_data" id="model_data" cols="30" rows="10" class="tinymce form-control">
-                              {{old('model_data')}}
-                            </textarea>
+                            <textarea name="model_data" id="model_data" cols="30" rows="5" class="tinymce form-control com-sm-12 clearfix">{{old('model_data')}}</textarea>
                             @if($errors->has('model_data'))
                               <div class="form-control-feedback">{{ $errors->first('model_data')}}</div>
                             @endif
@@ -122,9 +134,7 @@
                             <label class="control-label requiredField" for="problem">
                                 {{__('nomenclature.problem')}}
                             </label>
-                            <textarea name="problem" id="problem" cols="30" rows="10" class="tinymce form-control">
-                              {{old('problem')}}
-                            </textarea>
+                            <textarea name="problem" id="problem" cols="30" rows="5" class="tinymce form-control">{{old('problem')}}</textarea>
                             @if($errors->has('problem'))
                               <div class="form-control-feedback">{{ $errors->first('problem')}}</div>
                             @endif
@@ -168,16 +178,12 @@
                             <label class="control-label requiredField" for="notices">
                                 {{__('nomenclature.notices')}}
                             </label>
-                            <textarea name="notices" id="notices" cols="30" rows="10" class="tinymce form-control">
-                              {{old('notices')}}
-                            </textarea>
+                            <textarea name="notices" id="notices" cols="30" rows="5" class="tinymce form-control">{{old('notices')}}</textarea>
                             @if($errors->has('notices'))
                               <div class="form-control-feedback">{{ $errors->first('notices')}}</div>
                             @endif
                         </div>
                         {{-- end notices --}}
-
-
 
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">

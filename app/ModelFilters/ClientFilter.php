@@ -23,6 +23,15 @@ class ClientFilter extends ModelFilter
     });
   }
 
+  public function search($str)
+  {
+    return $this->where(function ($q) use ($str) {
+      return $q->where('name', 'LIKE', "%$str%")
+        ->orWhere('phone', 'LIKE', '%$str%')
+        ->orWhere('address', 'LIKE', '%$str%');
+    });
+  }
+
   public function setup()
   {
     $this->onlyShowDeletedForAdmins();

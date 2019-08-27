@@ -10,6 +10,7 @@ try {
   require('jquery-ui/ui/widgets/autocomplete.js');
   require('bootstrap');
   require('bootstrap-table/src/bootstrap-table');
+  require('bootstrap-table/src/locale/bootstrap-table-ru-RU');
   require('bootstrap-notify/bootstrap-notify');
 } catch (e) {}
 /**

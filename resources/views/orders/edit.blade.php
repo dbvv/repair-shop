@@ -66,11 +66,25 @@
                                 <option @if(old('brand_id') === $brand->id || $order->brand_id === $brand->id) selected="true" @endif value="{{$brand->id}}">{{ $brand->name }}</option>
                               @endforeach
                             </select>
-                            @if($errors->has('brand_id_id'))
+                            @if($errors->has('brand_id'))
                               <div class="form-control-feedback">{{ $errors->first('brand_id')}}</div>
                             @endif
                         </div>
                         {{-- end brand_id --}}
+
+                        <div class="form-group row">
+                            <label for="imei" class="col-md-4 col-form-label text-md-right">{{ __('IMEI') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="imei" type="text" class="form-control @error('imei') is-invalid @enderror" name="imei" value="{{ old('imei') }}" >
+
+                                @error('imei')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
 
                         {{-- workshop_id --}}
                         <div class="form-group {{ $errors->has('workshop_id') ? 'has-danger' : ''}}">
@@ -100,9 +114,7 @@
                                     *
                                 </span>
                             </label>
-                            <textarea name="model_data" id="model_data" cols="30" rows="10" class="tinymce form-control">
-                              {!! old('model_data') ? old('model_data') : $order->model_data !!}
-                            </textarea>
+                            <textarea name="model_data" id="model_data" cols="30" rows="5" class="tinymce form-control">{!! old('model_data') ? old('model_data') : $order->model_data !!}</textarea>
                             @if($errors->has('model_data'))
                               <div class="form-control-feedback">{{ $errors->first('model_data')}}</div>
                             @endif
@@ -114,9 +126,7 @@
                             <label class="control-label requiredField" for="problem">
                                 {{__('nomenclature.problem')}}
                             </label>
-                            <textarea name="problem" id="problem" cols="30" rows="10" class="tinymce form-control">
-                              {!! old('problem') ? old('problem') : $order->problem !!}
-                            </textarea>
+                            <textarea name="problem" id="problem" cols="30" rows="5" class="tinymce form-control">{!! old('problem') ? old('problem') : $order->problem !!}</textarea>
                             @if($errors->has('problem'))
                               <div class="form-control-feedback">{{ $errors->first('problem')}}</div>
                             @endif
@@ -160,9 +170,7 @@
                             <label class="control-label requiredField" for="notices">
                                 {{__('nomenclature.notices')}}
                             </label>
-                            <textarea name="notices" id="notices" cols="30" rows="10" class="tinymce form-control">
-                              {!! old('notices') ? old('notices') : $order->notices !!}
-                            </textarea>
+                            <textarea name="notices" id="notices" cols="30" rows="5" class="tinymce form-control">{!! old('notices') ? old('notices') : $order->notices !!}</textarea>
                             @if($errors->has('notices'))
                               <div class="form-control-feedback">{{ $errors->first('notices')}}</div>
                             @endif

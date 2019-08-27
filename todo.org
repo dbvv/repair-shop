@@ -23,7 +23,7 @@
     [X] add installer
     [X] move to public html
 
-[-] Editions [14/15]
+[-] Editions [18/20]
   [X] add print button
   [X] remove buttons file on tinymce
   [X] add newclient from order
@@ -41,9 +41,11 @@
     [X] html with data
     [X] controller with new page
     [X] check printable data
-  [ ] remove required in order form
-  [ ] add imei field and make it searchable
-  [ ] form text area smaller
-  [ ] localize login and bootstrap-table
-  [ ] make date searchable
+  [X] remove required in order form
+  [X] add imei field and make it searchable
+  [X] form text area smaller
+  [-] localize login and bootstrap-table
+    [X] bootstrap table
+    [ ] login
+  [X] make date searchable
   [ ] margins on printable

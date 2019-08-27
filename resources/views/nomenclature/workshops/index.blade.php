@@ -10,9 +10,9 @@
     <table class="table table-striped table-hover">
       <thead>
         <tr>
-          <th scope="col">#</th>
-          <th scope="col">{{ __('nomenclature.name') }}</th>
-          <th scope="col">{{ __('nomenclature.created_at') }}</th>
+          <th scope="col" data-sortable="true">#</th>
+          <th scope="col" data-sortable="true">{{ __('nomenclature.name') }}</th>
+          <th scope="col" data-sortable="true">{{ __('nomenclature.created_at') }}</th>
           <th scope="col"></th>
         </tr>
       </thead>

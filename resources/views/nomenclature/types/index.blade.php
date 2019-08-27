@@ -7,12 +7,12 @@
     <h1>{{ __('nomenclature.types') }}</h1>
     @include('layouts.search')
     <a href="{{ route('nomenclature.type.create') }}" class="btn btn-info float-right">{{ __('nomenclature.create') }}</a>
-    <table class="table table-striped table-hover">
+    <table class="table table-striped table-hover" data-toggle="table" data-locale="ru-RU">
       <thead>
         <tr>
-          <th scope="col">#</th>
-          <th scope="col">{{ __('nomenclature.name') }}</th>
-          <th scope="col">{{ __('nomenclature.created_at') }}</th>
+          <th scope="col" data-sortable="true">#</th>
+          <th scope="col" data-sortable="true">{{ __('nomenclature.name') }}</th>
+          <th scope="col" data-sortable="true">{{ __('nomenclature.created_at') }}</th>
           <th scope="col"></th>
         </tr>
       </thead>

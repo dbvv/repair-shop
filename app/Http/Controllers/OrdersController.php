@@ -78,6 +78,7 @@ class OrdersController extends Controller
       'client_pay'  => (int) $request->get('client_pay'),
       'notices'     => $request->get('notices'),
       'problem'     => $request->get('problem'),
+      'imei'        => $request->get('imei'),
     ];
     // dd($data);
 
@@ -164,6 +165,7 @@ class OrdersController extends Controller
       'client_pay'  => $request->get('client_pay'),
       'notices'     => $request->get('notices'),
       'problem'     => $request->get('problem'),
+      'imei'        => $request->get('imei'),
     ]);
 
     flash(__('order.updated'));
