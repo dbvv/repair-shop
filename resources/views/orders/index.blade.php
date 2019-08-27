@@ -86,6 +86,14 @@
         })
       $('#recentlyCreatedOrder').modal('show');
     }
+
+    function goToPrintPreview() {
+      var orderID = $('#modalPrintPreviewButton').attr('data-id');
+      if (orderID) {
+        var redirectUrl = '{{url('/')}}/print/' + orderID;
+        window.open(redirectUrl, '_blank');
+      }
+    }
   </script>
   @endif
 
