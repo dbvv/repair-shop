@@ -51,3 +51,5 @@
   [X] margins on printable
   [X] search date valid
   [X] make on order creation form working
+  [ ] magins on form
+  [ ] add csv import\export

@@ -6,7 +6,7 @@
   <div class="container">
     <h1>{{ __('nomenclature.clients') }}</h1>
     @include('layouts.search')
-    <a href="{{ route('nomenclature.client.create') }}" class="btn btn-info float-right">{{ __('nomenclature.create') }}</a>
+    <a href="{{ route('nomenclature.client.create') }}" class="btn btn-info float-right mb-3">{{ __('nomenclature.create') }}</a>
     <table class="table table-striped table-hover" data-toggle="table" data-locale="ru-RU">
       <thead>
         <tr>
