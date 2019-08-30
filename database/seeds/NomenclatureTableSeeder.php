@@ -99,7 +99,7 @@ class NomenclatureTableSeeder extends Seeder
         // Log::info($orders_data[$i]);
         //
         $orders[] = [
-          // 'id'          => $order['Id'],
+          'id'          => $order['Id'],
           'workshop_id' => 1,
           'client_id'   => $order['ClientId'],
           'completed'   => true,

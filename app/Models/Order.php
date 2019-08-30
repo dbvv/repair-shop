@@ -11,6 +11,7 @@ class Order extends Model
   use SoftDeletes, Filterable;
 
   protected $fillable = [
+    'id',
     'brand_id',
     'type_id',
     'model_data',
