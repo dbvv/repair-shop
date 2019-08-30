@@ -18,6 +18,8 @@ class NomenclatureTableSeeder extends Seeder
   {
     $files = [
       'clients' => storage_path('app/clients.csv'),
+      'brands'  => storage_path('app/firms.csv'),
+      'types'   => storage_path('app/types.csv'),
     ];
 
     // parse clients
@@ -28,7 +30,6 @@ class NomenclatureTableSeeder extends Seeder
       $clients = [];
 
       for ($i = 0; $i < count($clients_data); $i++) {
-        // Log::info($clients_data[$i]);
         $client    = $clients_data[$i];
         $clients[] = [
           'id'      => $client['Id'],
@@ -43,14 +44,45 @@ class NomenclatureTableSeeder extends Seeder
       }
     }
 
-    Brand::create(['name' => 'iPhone']);
-    Brand::create(['name' => 'iMac']);
-    Brand::create(['name' => 'Samsung']);
-    Brand::create(['name' => 'Prestigio']);
+    // import brands
+    $brandsdb    = new Csv($files['brands']);
+    $brands_data = $brandsdb->data;
 
-    Type::create(['name' => 'Планшет']);
-    Type::create(['name' => 'Смартфон']);
-    Type::create(['name' => 'Ноутбук']);
+    if ($brands_data) {
+      $brands = [];
+
+      for ($i = 0; $i < count($brands_data); $i++) {
+        $brand = $brands_data[$i];
+
+        $brands[] = [
+          'id'   => $brand['Id'],
+          'name' => $brand['Name'],
+        ];
+      }
+      if (!empty($brands)) {
+        Brand::insert($brands);
+      }
+    }
+
+    // import types
+    $typesdb    = new Csv($files['types']);
+    $types_data = $typesdb->data;
+
+    if ($types_data) {
+      $types = [];
+
+      for ($i = 0; $i < count($types_data); $i++) {
+        $type = $types_data[$i];
+
+        $types[] = [
+          'id'   => $type['Id'],
+          'name' => $type['Name'],
+        ];
+      }
+      if (!empty($types)) {
+        Type::insert($types);
+      }
+    }
 
     Workshop::create(['name' => 'Ул. Такая 5']);
   }
