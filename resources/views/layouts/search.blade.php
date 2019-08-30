@@ -9,11 +9,11 @@
     </div>
     @if(isset($completed))
       <label for="completed">
-        <input type="radio" id="completed" name="completed" value="on" {{ $_GET['completed'] === 'on' ? 'checked="checked"' : '' }}>
+        <input type="radio" id="completed" name="completed" value="on" {{ isset($_GET['completed']) && $_GET['completed'] === 'on' ? 'checked="checked"' : '' }}>
         {{__('order.completed')}}
       </label>
       <label for="notcompleted">
-        <input type="radio" id="notcompleted" name="completed" value="off" {{ $_GET['completed'] === 'off' ? 'checked="checked"' : '' }}>
+        <input type="radio" id="notcompleted" name="completed" value="off" {{ isset($_GET['completed']) && $_GET['completed'] === 'off' ? 'checked="checked"' : '' }}>
         {{__('order.not-completed')}}
       </label>
     @endif
