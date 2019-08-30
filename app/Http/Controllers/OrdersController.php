@@ -54,7 +54,7 @@ class OrdersController extends Controller
       'type_id'     => 'required',
       'workshop_id' => 'required',
       'model_data'  => 'required',
-      'price'       => 'integer|min:0',
+      'price'       => 'required|integer|min:0',
       'client_pay'  => 'integer',
       'problem'     => 'required',
     ];

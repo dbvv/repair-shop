@@ -142,6 +142,9 @@
                         <div class="form-group {{ $errors->has('problem') ? 'has-danger' : ''}}">
                             <label class="control-label requiredField" for="problem">
                                 {{__('nomenclature.problem')}}
+                                <span class="asteriskField">
+                                    *
+                                </span>
                             </label>
                             <textarea name="problem" id="problem" cols="30" rows="5" class="tinymce form-control">{{old('problem')}}</textarea>
                             @if($errors->has('problem'))
