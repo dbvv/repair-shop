@@ -5,7 +5,7 @@
 @section('content')
 <div class="container">
     <h1>{{ __('order.all') }}</h1>
-    @include('layouts.search')
+    @include('layouts.search', ['completed' => true])
     <a href="{{ route('order.create') }}" class="btn btn-info float-right mb-3">{{ __('nomenclature.create') }}</a>
     <table class="table table-striped table-hover" data-toggle="table" data-locale="ru-RU">
       <thead>

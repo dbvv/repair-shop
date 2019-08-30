@@ -3,8 +3,8 @@
 namespace App\ModelFilters;
 
 use Auth;
-use EloquentFilter\ModelFilter;
 use Date;
+use EloquentFilter\ModelFilter;
 use Validator;
 
 class OrderFilter extends ModelFilter
@@ -42,7 +42,7 @@ class OrderFilter extends ModelFilter
         ->orWhere('notices', 'LIKE', "%$str%")
         ->orWhere('imei', 'LIKE', "%$str%")
         ->orWhere('problem', 'LIKE', "%$str%");
-        
+
       // validate date
       $validator = Validator::make(['search_date' => $str], ['search_date' => 'date']);
 
@@ -67,4 +67,14 @@ class OrderFilter extends ModelFilter
         return $query->where('name', 'LIKE', "%$str%");
       });
   }
+
+  public function completed($value)
+  {
+    if ($value === 'on') {
+      return $this->isCompleted();
+    } else {
+      return $this->isNotCompleted();
+    }
+  }
+
 }

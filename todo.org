@@ -23,7 +23,7 @@
     [X] add installer
     [X] move to public html
 
-[-] Editions [24/25]
+[X] Editions [26/26]
   [X] add print button
   [X] remove buttons file on tinymce
   [X] add newclient from order
@@ -53,5 +53,5 @@
   [X] make on order creation form working
   [X] magins on form
   [X] add csv import\export
-  [ ] completed\not completed order
-  [ ] search by completed
+  [X] completed\not completed order
+  [X] search by completed

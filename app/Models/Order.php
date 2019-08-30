@@ -43,4 +43,14 @@ class Order extends Model
   {
     return $this->belongsTo('App\Models\Workshop')->withTrashed();
   }
+
+  public function scopeIsCompleted($query)
+  {
+    return $query->where('completed', true);
+  }
+
+  public function scopeIsNotCompleted($query)
+  {
+    return $query->where('completed', false);
+  }
 }
