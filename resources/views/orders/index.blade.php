@@ -15,7 +15,7 @@
           <th scope="col" data-field="apparat" data-sortable="true" style="width: 20%">{{ __('order.apparat') }}</th>
           <th scope="col" data-field="client" data-sortable="true">{{ __('nomenclature.client') }}</th>
           <th scope="col" data-field="workshop" data-sortable="true">{{ __('nomenclature.workshop') }}</th>
-          <th scope="col" data-field="edit" data-width="20" data-width-unit="%"></th>
+          <th scope="col" data-field="edit" data-width="17" data-width-unit="%"></th>
         </tr>
       </thead>
       <tbody>
@@ -30,7 +30,7 @@
             <form action="{{ route('order.destroy', ['id' => $order->id]) }}" method="POST">
               @csrf
               @method('DELETE')
-              <a href="#" onclick="return showOrderModal({{$order->id}})" class="btn btn-default"><i class="fa fa-eye"></i></a>
+              <a href="#" onclick="return showOrderModal({{$order->id}})" class="btn btn-default btn-sm"><i class="fa fa-eye"></i></a>
               <a href="{{route('print', ['orderID' => $order->id])}}" target="_blank" class="btn btn-default btn-sm"><i class="fa fa-print"></i></a>
               <a class="btn btn-default btn-sm" href="{{route('order.edit', ['id' => $order->id])}}"><i class="fa fa-edit"></i></a>
               <a href="{{route('order.toggle', ['id' => $order->id])}}" class="btn btn-default btn-sm">

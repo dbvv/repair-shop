@@ -101,10 +101,11 @@
       <div>
         {{__('nomenclature.problem')}}: {!! $order->problem !!}
       </div>
-
-      <div>
-        {{__('order.payments')}}: {{$order->client_pay}} | {{$order->price}}
-      </div>
+      @if($order->client_pay && $order->price)
+        <div>
+          {{__('order.payments')}}: {{$order->client_pay}} / {{$order->price}}
+        </div>
+      @endif
     </div>
     {{-- end data --}}
 
@@ -146,9 +147,11 @@
         {{__('nomenclature.problem')}}: {!! $order->problem !!}
       </div>
 
+      @if($order->client_pay && $order->price)
       <div>
-        {{__('order.payments')}}: {{$order->client_pay}} | {{$order->price}}
+        {{__('order.payments')}}: {{$order->client_pay}} / {{$order->price}}
       </div>
+      @endif
     </div>
   </footer>
   {{-- end footer --}}

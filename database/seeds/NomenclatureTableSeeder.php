@@ -123,6 +123,6 @@ class NomenclatureTableSeeder extends Seeder
       }
     }
 
-    Workshop::create(['name' => 'Ул. Такая 5']);
+    Workshop::create(['name' => 'Ул. Краснополянская 48']);
   }
 }

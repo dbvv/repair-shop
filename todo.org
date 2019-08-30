@@ -23,7 +23,7 @@
     [X] add installer
     [X] move to public html
 
-[X] Editions [26/26]
+[X] Editions [29/29]
   [X] add print button
   [X] remove buttons file on tinymce
   [X] add newclient from order
@@ -55,6 +55,6 @@
   [X] add csv import\export
   [X] completed\not completed order
   [X] search by completed
-  [ ] Смотри, проверь поля некоторые, у всех ли обязательных стоят звездочки
-  [ ] поля про оплату не показываются если не заполнены
-  [ ] знак между ними можно поменять на / вместо |
+  [X] Смотри, проверь поля некоторые, у всех ли обязательных стоят звездочки
+  [X] поля про оплату не показываются если не заполнены
+  [X] знак между ними можно поменять на / вместо |

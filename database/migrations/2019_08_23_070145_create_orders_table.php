@@ -23,7 +23,7 @@ class CreateOrdersTable extends Migration
             $table->integer('price')->nullable();
             $table->integer('client_pay')->nullable();
             $table->text('notices')->nullable();
-            $table->text('problem');
+            $table->text('problem')->nullable();
             $table->text('imei')->nullable();
             $table->boolean('completed')->default(false);
             $table->softDeletes();
