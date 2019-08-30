@@ -38,6 +38,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('workshop', 'WorkshopController');
   });
 
+  Route::get('order-toggle/{id}', 'OrdersReadyController@toggle')->name('order.toggle');
   Route::resource('order', 'OrdersController');
 
   Route::get('users', 'UsersController@index')->name('users.index');
