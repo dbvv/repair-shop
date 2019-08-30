@@ -20,7 +20,8 @@ class Order extends Model
     'client_pay',
     'notices',
     'problem',
-    'imei'
+    'imei',
+    'completed',
   ];
 
   public function brand()

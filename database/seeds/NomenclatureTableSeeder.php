@@ -2,10 +2,12 @@
 
 use App\Models\Brand;
 use App\Models\Client;
+use App\Models\Order;
 use App\Models\Type;
 use App\Models\Workshop;
 use Illuminate\Database\Seeder;
 use ParseCsv\Csv;
+use Carbon\Carbon;
 
 class NomenclatureTableSeeder extends Seeder
 {
@@ -20,6 +22,7 @@ class NomenclatureTableSeeder extends Seeder
       'clients' => storage_path('app/clients.csv'),
       'brands'  => storage_path('app/firms.csv'),
       'types'   => storage_path('app/types.csv'),
+      'orders'  => storage_path('app/orders.csv'),
     ];
 
     // parse clients
@@ -81,6 +84,42 @@ class NomenclatureTableSeeder extends Seeder
       }
       if (!empty($types)) {
         Type::insert($types);
+      }
+    }
+
+    $ordersdb    = new Csv($files['orders']);
+    $orders_data = $ordersdb->data;
+
+    if ($orders_data) {
+      $orders = [];
+
+      for ($i = 0; $i < count($orders_data); $i++) {
+        $order      = $orders_data[$i];
+        $created_at = Carbon::parse($order['GetDate'])->format('Y-m-d');
+        // Log::info($orders_data[$i]);
+        //
+        $orders[] = [
+          // 'id'          => $order['Id'],
+          'workshop_id' => 1,
+          'client_id'   => $order['ClientId'],
+          'completed'   => true,
+          'created_at'  => $created_at,
+          'type_id'     => $order['Type'],
+          'brand_id'    => $order['Firm'],
+          'model_data'  => $order['Model'] . ', ' . $order['Complection'] . ', ' . $order['Number'],
+          'problem'     => $order['Diagnose'],
+          'notices'     => $order['MemoField'],
+        ];
+      }
+
+      if (!empty($orders)) {
+        $insert_data = collect($orders);
+
+        $chunks = $insert_data->chunk(250);
+
+        foreach ($chunks as $chunk) {
+          Order::insert($chunk->toArray());
+        }
       }
     }
 

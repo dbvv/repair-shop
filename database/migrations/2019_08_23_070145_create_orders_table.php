@@ -20,11 +20,12 @@ class CreateOrdersTable extends Migration
             $table->integer('type_id');
             $table->text('model_data');
             $table->integer('workshop_id');
-            $table->integer('price');
+            $table->integer('price')->nullable();
             $table->integer('client_pay')->nullable();
             $table->text('notices')->nullable();
             $table->text('problem');
             $table->text('imei')->nullable();
+            $table->boolean('completed')->default(false);
             $table->softDeletes();
             $table->timestamps();
         });
