@@ -9,7 +9,7 @@ use EloquentFilter\Filterable;
 class Client extends Model
 {
   use SoftDeletes, Filterable;
-  protected $fillable = ['name', 'phone', 'address'];
+  protected $fillable = ['id', 'name', 'phone', 'address'];
 
   public function orders()
   {
