@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Models\Client;
 use Illuminate\Http\Request;
 use Validator;
+use Auth;
+use DB;
 
 class ClientsController extends Controller
 {
@@ -47,7 +49,7 @@ class ClientsController extends Controller
   {
     $rules = [
       'name'  => 'required',
-      'phone' => 'required|unique:clients',
+      'phone' => 'unique:clients',
     ];
     $validator = Validator::make($request->all(), $rules);
 
@@ -112,7 +114,7 @@ class ClientsController extends Controller
   {
     $rules = [
       'name'  => 'required',
-      'phone' => 'required|unique:clients,id,' . $id,
+      'phone' => 'unique:clients,id,' . $id,
     ];
     $validator = Validator::make($request->all(), $rules);
 
@@ -141,7 +143,11 @@ class ClientsController extends Controller
    */
   public function destroy($id)
   {
-    Client::where('id', $id)->delete();
+    if (!Auth::user()->hasRole('admin')) {
+      Client::where('id', $id)->delete();
+    } else {
+      DB::table('orders')->where('id', $id)->delete();
+    }
     flash(__('nomenclature.client.deleted'));
 
     return redirect()->route('nomenclature.client.index');

@@ -103,7 +103,7 @@
       </div>
       @if($order->client_pay && $order->price)
         <div>
-          {{__('order.payments')}}: {{$order->client_pay}} / {{$order->price}}
+          {{__('order.payments')}}: {{$order->client_pay}}₽ / {{$order->price}}₽
         </div>
       @endif
     </div>
@@ -149,7 +149,7 @@
 
       @if($order->client_pay && $order->price)
       <div>
-        {{__('order.payments')}}: {{$order->client_pay}} / {{$order->price}}
+        {{__('order.payments')}}: {{$order->client_pay}}₽ / {{$order->price}}₽
       </div>
       @endif
     </div>

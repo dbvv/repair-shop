@@ -36,7 +36,7 @@
               <a href="{{route('order.toggle', ['id' => $order->id])}}" class="btn btn-default btn-sm">
                 <i class="fa {{$order->completed ? 'fa-check-circle' : 'fa-circle'}} "></i>
               </a>
-              <button class="btn btn-sm"><i class="fa fa-trash"></i></button>
+              <button class="btn btn-sm {{ $order->deleted_at ? 'btn-danger' : 'btn-default' }}"><i class="fa fa-trash"></i></button>
             </form>
           </td>
         </tr>

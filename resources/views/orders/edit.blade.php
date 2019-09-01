@@ -141,7 +141,7 @@
                             <label for="price" class="col-md-4 col-form-label text-md-right">{{ __('order.price') }}</label>
 
                             <div class="col-md-6">
-                                <input id="price" type="number" class="form-control @error('price') is-invalid @enderror" name="price" value="{{ old('price') ? old('price') : $order->price }}" required autocomplete="price">
+                                <input id="price" type="number" class="form-control @error('price') is-invalid @enderror" name="price" value="{{ old('price') ? old('price') : $order->price }}" autocomplete="price">
 
                                 @error('price')
                                     <span class="invalid-feedback" role="alert">
@@ -157,7 +157,7 @@
                             <label for="client_pay" class="col-md-4 col-form-label text-md-right">{{ __('nomenclature.client_pay') }}</label>
 
                             <div class="col-md-6">
-                                <input id="client_pay" type="number" class="form-control @error('client_pay') is-invalid @enderror" name="client_pay" value="{{ old('client_pay') ? old('client_pay') : $order->client_pay }}" required autocomplete="client_pay">
+                                <input id="client_pay" type="number" class="form-control @error('client_pay') is-invalid @enderror" name="client_pay" value="{{ old('client_pay') ? old('client_pay') : $order->client_pay }}" autocomplete="client_pay">
 
                                 @error('client_pay')
                                     <span class="invalid-feedback" role="alert">

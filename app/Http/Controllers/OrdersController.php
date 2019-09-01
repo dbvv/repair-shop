@@ -8,6 +8,8 @@ use App\Models\Type;
 use App\Models\Workshop;
 use Illuminate\Http\Request;
 use Validator;
+use Auth;
+use DB;
 
 class OrdersController extends Controller
 {
@@ -181,7 +183,13 @@ class OrdersController extends Controller
    */
   public function destroy($id)
   {
-    Order::where('id', $id)->delete();
+    if (!Auth::user()->hasRole('admin')) {
+      Order::where('id', $id)->delete();
+    } else {
+      DB::table('orders')->where('id', $id)->delete();
+    }
+
+    flash(__('order.deleted'));
 
     return redirect()->route('order.index');
   }
