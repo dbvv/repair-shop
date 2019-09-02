@@ -6,8 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Models\Client;
 use Illuminate\Http\Request;
 use Validator;
-use Auth;
-use DB;
 
 class ClientsController extends Controller
 {
@@ -143,12 +141,9 @@ class ClientsController extends Controller
    */
   public function destroy($id)
   {
-    if (!Auth::user()->hasRole('admin')) {
-      Client::where('id', $id)->delete();
-    } else {
-      DB::table('orders')->where('id', $id)->delete();
-    }
-    flash(__('nomenclature.client.deleted'));
+    Client::where('id', $id)->delete();
+
+    flash(__('nomenclature.client_deleted'));
 
     return redirect()->route('nomenclature.client.index');
   }

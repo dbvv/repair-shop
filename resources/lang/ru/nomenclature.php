@@ -18,6 +18,7 @@ return [
   'client_phone'    => 'Телефон',
   'client_edit'     => 'Редактировать клиента :name',
   'client_create'   => 'Создать клиента',
+  'client_deleted'  => 'Клиент удален',
 
   'types'           => 'Типы',
   'type'            => 'Тип',
