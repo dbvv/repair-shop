@@ -9,7 +9,7 @@ class OrdersReadyController extends Controller
 {
   public function toggle(Request $request, $id)
   {
-    $order            = Order::findOrFail($id);
+    $order            = Order::filter($request->all())->findOrFail($id);
     $order->completed = !$order->completed;
     $order->save();
     flash(__('order.updated'));
