@@ -63,3 +63,10 @@
   [X] 3. Проверь выбор клиента ещё раз
   [X] 4. Просит указать стоимость, хотя она опционально
   [X] 5. На выводе на печать и просмотре, добавь к цифрам знак ₽
+  [ ] order trash logic
+  [ ] all nomenclatures trash logic
+    [ ] client
+    [ ] type
+    [ ] workshop
+    [ ] brand
+  [ ] checkbox to search in deleted
