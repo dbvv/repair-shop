@@ -15,18 +15,6 @@ class TypeFilter extends ModelFilter
    */
   public $relations = [];
 
-  public function setup()
-  {
-    $this->onlyShowDeletedForAdmins();
-  }
-
-  public function onlyShowDeletedForAdmins()
-  {
-    if (Auth::user()->hasRole('admin')) {
-      $this->withTrashed();
-    }
-  }
-
   public function search($str)
   {
     return $this->where(function ($q) use ($str) {

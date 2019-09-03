@@ -1,7 +1,6 @@
 <?php
 namespace App\ModelFilters;
 
-use Auth;
 use EloquentFilter\ModelFilter;
 
 class BrandFilter extends ModelFilter
@@ -16,17 +15,10 @@ class BrandFilter extends ModelFilter
 
   public function setup()
   {
-    $this->onlyShowDeletedForAdmins();
   }
 
-  public function onlyShowDeletedForAdmins()
+  public function search($str)
   {
-    if (Auth::user()->hasRole('admin')) {
-      $this->withTrashed();
-    }
-  }
-
-  public function search($str) {
     return $this->where(function ($q) use ($str) {
       return $q->where('name', 'LIKE', "%$str%");
     });

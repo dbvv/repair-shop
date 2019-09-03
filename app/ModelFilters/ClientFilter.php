@@ -31,16 +31,4 @@ class ClientFilter extends ModelFilter
         ->orWhere('address', 'LIKE', '%$str%');
     });
   }
-
-  public function setup()
-  {
-    $this->onlyShowDeletedForAdmins();
-  }
-
-  public function onlyShowDeletedForAdmins()
-  {
-    if (Auth::user()->hasRole('admin')) {
-      $this->withTrashed();
-    }
-  }
 }

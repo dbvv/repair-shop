@@ -16,5 +16,11 @@
         <input type="radio" id="notcompleted" name="completed" value="off" {{ isset($_GET['completed']) && $_GET['completed'] === 'off' ? 'checked="checked"' : '' }}>
         {{__('order.not-completed')}}
       </label>
+      <button class="btn btn-default" onclick="return clearFilter();"><i class="fa fa-filter"></i><span>{{ __('order.clear_filter') }}</span></button>
+      <script>
+        function clearFilter() {
+          $('input[name="completed"]').prop('checked', false);
+        }
+      </script>
     @endif
 </form>

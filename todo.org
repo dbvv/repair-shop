@@ -23,7 +23,7 @@
     [X] add installer
     [X] move to public html
 
-[X] Editions [34/34]
+[-] Editions [36/37]
   [X] add print button
   [X] remove buttons file on tinymce
   [X] add newclient from order
@@ -63,10 +63,10 @@
   [X] 3. Проверь выбор клиента ещё раз
   [X] 4. Просит указать стоимость, хотя она опционально
   [X] 5. На выводе на печать и просмотре, добавь к цифрам знак ₽
-  [ ] order trash logic
-  [ ] all nomenclatures trash logic
-    [ ] client
-    [ ] type
-    [ ] workshop
-    [ ] brand
-  [ ] checkbox to search in deleted
+  [X] order trash logic
+  [X] all nomenclatures trash logic
+    [X] client
+    [X] type
+    [X] workshop
+    [X] brand
+  [ ] checkbox to search in deleted and clear filter radio and checkbox

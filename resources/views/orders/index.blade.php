@@ -30,12 +30,16 @@
             <form action="{{ route('order.destroy', ['id' => $order->id]) }}" method="POST">
               @csrf
               @method('DELETE')
-              <a href="#" onclick="return showOrderModal({{$order->id}})" class="btn btn-default btn-sm"><i class="fa fa-eye"></i></a>
-              <a href="{{route('print', ['orderID' => $order->id])}}" target="_blank" class="btn btn-default btn-sm"><i class="fa fa-print"></i></a>
-              <a class="btn btn-default btn-sm" href="{{route('order.edit', ['id' => $order->id])}}"><i class="fa fa-edit"></i></a>
-              <a href="{{route('order.toggle', ['id' => $order->id])}}" class="btn btn-default btn-sm">
-                <i class="fa {{$order->completed ? 'fa-check-circle' : 'fa-circle'}} "></i>
-              </a>
+              @if(!$order->deleted_at)
+                <a href="#" onclick="return showOrderModal({{$order->id}})" class="btn btn-default btn-sm"><i class="fa fa-eye"></i></a>
+                <a href="{{route('print', ['orderID' => $order->id])}}" target="_blank" class="btn btn-default btn-sm"><i class="fa fa-print"></i></a>
+                <a class="btn btn-default btn-sm" href="{{route('order.edit', ['id' => $order->id])}}"><i class="fa fa-edit"></i></a>
+                <a href="{{route('order.toggle', ['id' => $order->id])}}" class="btn btn-default btn-sm">
+                  <i class="fa {{$order->completed ? 'fa-check-circle' : 'fa-circle'}} "></i>
+                </a>
+              @else
+                <a href="{{ route('order.restore', ['id' => $order->id]) }}" class="btn btn-success btn-sm"><i class="fa fa-external-link"></i></a>
+              @endif
               <button class="btn btn-sm {{ $order->deleted_at ? 'btn-danger' : 'btn-default' }}"><i class="fa fa-trash"></i></button>
             </form>
           </td>

@@ -39,6 +39,7 @@ Route::group(['middleware' => 'auth'], function () {
   });
 
   Route::get('order-toggle/{id}', 'OrdersReadyController@toggle')->name('order.toggle');
+  Route::get('order-restore/{id}', 'OrdersReadyController@restore')->name('order.restore')->middleware('role:admin');
   Route::resource('order', 'OrdersController');
 
   Route::get('users', 'UsersController@index')->name('users.index');

@@ -55,16 +55,20 @@ class OrderFilter extends ModelFilter
       ->orWhereHas('client', function ($query) use ($str) {
         return $query->where('name', 'LIKE', "%$str%")
           ->orWhere('phone', 'LIKE', "%$str%")
-          ->orWhere('address', 'LIKE', "%$str%");
+          ->orWhere('address', 'LIKE', "%$str%")
+          ->withTrashed();
       })
       ->orWhereHas('brand', function ($query) use ($str) {
-        return $query->where('name', 'LIKE', "%$str%");
+        return $query->where('name', 'LIKE', "%$str%")
+          ->withTrashed();
       })
       ->orWhereHas('type', function ($query) use ($str) {
-        return $query->where('name', 'LIKE', "%$str%");
+        return $query->where('name', 'LIKE', "%$str%")
+          ->withTrashed();
       })
       ->orWhereHas('workshop', function ($query) use ($str) {
-        return $query->where('name', 'LIKE', "%$str%");
+        return $query->where('name', 'LIKE', "%$str%")
+          ->withTrashed();
       });
   }
 

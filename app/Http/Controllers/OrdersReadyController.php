@@ -15,4 +15,11 @@ class OrdersReadyController extends Controller
     flash(__('order.updated'));
     return redirect()->back();
   }
+
+  public function restore(Request $request, $id) {
+    $order = Order::filter($request->all())->find($id)->restore();
+    flash(__('order.restored'));
+
+    return redirect()->back();
+  }
 }

@@ -20,13 +20,6 @@ class WorkshopFilter extends ModelFilter
     $this->onlyShowDeletedForAdmins();
   }
 
-  public function onlyShowDeletedForAdmins()
-  {
-    if (Auth::user()->hasRole('admin')) {
-      $this->withTrashed();
-    }
-  }
-
   public function search($str)
   {
     return $this->where(function ($q) use ($str) {
