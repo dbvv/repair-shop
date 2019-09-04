@@ -131,7 +131,7 @@ class NomenclatureTableSeeder extends Seeder
       }
     }
 
-    if (count(Workshop::all() <= 0)) {
+    if (count(Workshop::all()) <= 0) {
       Workshop::create(['name' => 'Ул. Краснополянская 48']);
     }
 
