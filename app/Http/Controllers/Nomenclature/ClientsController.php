@@ -70,7 +70,7 @@ class ClientsController extends Controller
       return response()->json(compact('client'));
     }
 
-    flash(__('nomenclature.client.created'));
+    flash(__('nomenclature.client_created'));
 
     return redirect()->route('nomenclature.client.edit', ['id' => $client->id]);
   }
@@ -128,7 +128,7 @@ class ClientsController extends Controller
       'address' => $request->get('address'),
     ]);
 
-    flash(__('nomenclature.client.updated'));
+    flash(__('nomenclature.client_updated'));
 
     return redirect()->route('nomenclature.client.edit', ['id' => $id]);
   }
