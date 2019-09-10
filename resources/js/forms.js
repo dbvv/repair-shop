@@ -28,14 +28,21 @@ $(document).ready(() => {
   $('#clientCreateModalForm').on('submit', function(e) {
     e.preventDefault();
   });
+
   $('#saveClientModal').on('click', function() {
     let $form = $('#clientCreateModalForm');
-    axios.post($form.attr('action'), $form.serialize()).then(data => {
-      const client = data.data.client;
-      $('#exampleModal').modal('hide');
-      $('input[name="client_id"]').val(client.id);
-      $('input[name="client"]').val(client.name + ' ' + (client.phone ? client.phone : '') + ' ' + (client.address ? client.address : ''));
-      $.notify('Клиент создан!');
+    $.ajax({
+      url: $form.attr('action'),
+      type: 'POST',
+      data: $form.serialize(),
+      success: function(data) {
+        const client = data.client;
+        console.log('client', client)
+        $('#exampleModal').modal('hide');
+        $('input[name="client_id"]').val(client.id);
+        $('input[name="client"]').val(client.name + ' ' + (client.phone ? client.phone : '') + ' ' + (client.address ? client.address : ''));
+        $.notify('Клиент создан!');
+      }
     })
   });
 });

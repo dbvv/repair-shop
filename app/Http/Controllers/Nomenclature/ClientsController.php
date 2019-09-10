@@ -47,13 +47,13 @@ class ClientsController extends Controller
   {
     $rules = [
       'name'  => 'required',
-      'phone' => 'unique:clients',
+      // 'phone' => 'unique:clients',
     ];
     $validator = Validator::make($request->all(), $rules);
 
     if ($validator->fails()) {
       if ($request->ajax()) {
-        return response()->json($validator, 400);
+        return response()->json(['errors' => 'asdasdas'], 400);
       }
       return redirect()->back()
         ->withInput()
