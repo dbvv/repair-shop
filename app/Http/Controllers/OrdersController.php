@@ -35,8 +35,8 @@ class OrdersController extends Controller
    */
   public function create()
   {
-    $types     = Type::all();
-    $brands    = Brand::all();
+    $types     = Type::orderBy('name')->get();
+    $brands    = Brand::orderBy('name')->get();
     $workshops = Workshop::all();
     return view('orders.create', compact('types', 'brands', 'workshops'));
   }
@@ -105,8 +105,8 @@ class OrdersController extends Controller
       return view('orders.preview', compact('order'));
     }
 
-    $types     = Type::all();
-    $brands    = Brand::all();
+    $types     = Type::orderBy('name')->get();
+    $brands    = Brand::orderBy('name')->get();
     $workshops = Workshop::all();
 
     return view('orders.edit', compact('order', 'types', 'brands', 'orders', 'workshops'));

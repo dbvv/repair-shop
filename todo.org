@@ -23,7 +23,7 @@
     [X] add installer
     [X] move to public html
 
-[-] Editions [36/37]
+[X] Editions [40/40]
   [X] add print button
   [X] remove buttons file on tinymce
   [X] add newclient from order
@@ -69,7 +69,7 @@
     [X] type
     [X] workshop
     [X] brand
-  [ ] checkbox to search in deleted and clear filter radio and checkbox
-  [ ] alphabetical sort for brands and types output
-  [ ] client autocomplete address
-  [ ] show client form data
+  [X] checkbox to search in deleted and clear filter radio and checkbox
+  [X] alphabetical sort for brands and types output
+  [X] client autocomplete address
+  [X] show client form data

@@ -10,7 +10,7 @@ $(document).ready(() => {
         success: function(data) {
           var result = [];
           data.clients.forEach(function(element, index) {
-            var val = element.name + " " + element.phone + " ";
+            var val = element.name + " " + (element.phone ? element.phone : '') + " " + (element.address ? element.address : '');
             result.push({
               id: element.id,
               value: val,
@@ -34,7 +34,7 @@ $(document).ready(() => {
       const client = data.data.client;
       $('#exampleModal').modal('hide');
       $('input[name="client_id"]').val(client.id);
-      $('input[name="client"]').val(client.name + ' ' + client.phone);
+      $('input[name="client"]').val(client.name + ' ' + client.phone + ' ' + client.address);
       $.notify('Клиент создан!');
     })
   });
