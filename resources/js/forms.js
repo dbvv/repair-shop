@@ -34,7 +34,7 @@ $(document).ready(() => {
       const client = data.data.client;
       $('#exampleModal').modal('hide');
       $('input[name="client_id"]').val(client.id);
-      $('input[name="client"]').val(client.name + ' ' + client.phone + ' ' + client.address);
+      $('input[name="client"]').val(client.name + ' ' + (client.phone ? client.phone : '') + ' ' + (client.address ? client.address : ''));
       $.notify('Клиент создан!');
     })
   });
