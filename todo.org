@@ -70,3 +70,6 @@
     [X] workshop
     [X] brand
   [ ] checkbox to search in deleted and clear filter radio and checkbox
+  [ ] alphabetical sort for brands and types output
+  [ ] client autocomplete address
+  [ ] show client form data
