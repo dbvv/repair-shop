@@ -82,7 +82,7 @@
         <p class="mb-0"><b>{{__('order.workshop_owner')}}</b></p>
         <p class="mb-0">{{ __('order.workshop_owner_iin') }}</p>
         <p class="mb-0">{{ $order->workshop->name }}</p>
-        <p class="mb-0">{!! __('order.phone', ['phone' => '8961059913']) !!}</p>
+        <p class="mb-0">{!! __('order.phone', ['phone' => '+7 (961) 059-99-13']) !!}</p>
         <p class="mb-0">{{ __('order.opening_hours') }}</p>
         <p>{{ __('order.opening_hours_weekend') }}</p>
       </div>
